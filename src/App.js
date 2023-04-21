@@ -25,16 +25,16 @@ const App = () => {
     setFilBox(e.target.value);
   };
 
+  const filted = counName
+    .filter((ob) => ob.name.common.toLowerCase().includes(filBox))
+    .map((obb, i) => <p key={i}>{obb.name.common}</p>);
+
   return (
     <div>
       <div>
         filter for name: <input onChange={handFiltChg} />
       </div>
-      <div>
-        {counName.map((c, i) => {
-          return <p key={i}>{c.name.common}</p>;
-        })}
-      </div>
+      <div>{filted}</div>
     </div>
   );
 };
