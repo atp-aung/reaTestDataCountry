@@ -28,6 +28,39 @@ const App = () => {
   const filted = counName
     .filter((ob) => ob.name.common.toLowerCase().includes(filBox))
     .map((obb, i) => <p key={i}>{obb.name.common}</p>);
+  console.log(filted);
+
+  if (filted.length > 10) {
+    return (
+      <div>
+        <div>
+          filter for name: <input onChange={handFiltChg} />
+        </div>
+        <p>too many, be more specific</p>
+      </div>
+    );
+  }
+
+  if (filted.length === 1) {
+    return (
+      <div>
+        <div>
+          filter for name: <input onChange={handFiltChg} />
+        </div>
+        <div>
+          {counName
+            .filter((ob) => ob.name.common.toLowerCase().includes(filBox))
+            .map((obb, i) => (
+              <div key={i}>
+                <p>{obb.name.common}</p>
+                <p>{obb.capital}</p>
+                <p>{obb.area}</p>
+              </div>
+            ))}
+        </div>
+      </div>
+    );
+  }
 
   return (
     <div>
