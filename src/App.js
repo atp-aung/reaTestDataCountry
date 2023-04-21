@@ -6,11 +6,10 @@ const App = () => {
   const [counName, setCounName] = useState([]);
 
   useEffect(() => {
-    console.log("effect run, currency is now");
-    //https://restcountries.com/v3.1/all?fields=name,flags`
+    console.log("effect starts run");
 
     if (filBox) {
-      console.log("fetching exchange rates...");
+      console.log("fetching nations...");
       axios
         .get(`https://restcountries.com/v3.1/all`)
         .then((response) => {
@@ -52,17 +51,16 @@ const App = () => {
             .filter((ob) => ob.name.common.toLowerCase().includes(filBox))
             .map((obb, i) => (
               <div key={i}>
-                <p>{obb.cca2}</p>
-                <p>{obb.name.common}</p>
-                <p>{obb.capital}</p>
-                <p>{obb.area}</p>
+                <h2>{obb.name.common}</h2>
+                <p>Capital: {obb.capital}</p>
+                <p>Area: {obb.area}</p>
+                <h3>Languages:</h3>
                 <div>
                   {Object.keys(obb.languages).map((key) => (
-                    <div key={key}>
-                      {key}: {obb.languages[key]}
-                    </div>
+                    <li key={key}>{obb.languages[key]}</li>
                   ))}
                 </div>
+                <img src={obb.flags.svg} alt="test logo" />
               </div>
             ))}
         </div>
