@@ -32,7 +32,7 @@ const App = () => {
       </div>
       <div>
         {counName.map((c, i) => {
-          return <p key={i}>{c.name.official}</p>;
+          return <p key={i}>{c.name.common}</p>;
         })}
       </div>
     </div>
