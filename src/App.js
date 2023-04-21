@@ -26,14 +26,22 @@ const App = () => {
 
   const filted = counName
     .filter((ob) => ob.name.common.toLowerCase().includes(filBox))
-    .map((obb, i) => <p key={i}>{obb.name.common}</p>);
+    .map((obb, i) => {
+      return (
+        <>
+          <p key={i}>
+            {obb.name.common} <button>show</button>
+          </p>
+        </>
+      );
+    });
   console.log(filted);
 
   if (filted.length > 10) {
     return (
       <div>
         <div>
-          filter for name: <input onChange={handFiltChg} />
+          find countries: <input onChange={handFiltChg} />
         </div>
         <p>too many, be more specific</p>
       </div>
@@ -44,7 +52,7 @@ const App = () => {
     return (
       <div>
         <div>
-          filter for name: <input onChange={handFiltChg} />
+          find countries: <input onChange={handFiltChg} />
         </div>
         <div>
           {counName
@@ -71,7 +79,7 @@ const App = () => {
   return (
     <div>
       <div>
-        filter for name: <input onChange={handFiltChg} />
+        find countries: <input onChange={handFiltChg} />
       </div>
       <div>{filted}</div>
     </div>
