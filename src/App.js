@@ -52,9 +52,17 @@ const App = () => {
             .filter((ob) => ob.name.common.toLowerCase().includes(filBox))
             .map((obb, i) => (
               <div key={i}>
+                <p>{obb.cca2}</p>
                 <p>{obb.name.common}</p>
                 <p>{obb.capital}</p>
                 <p>{obb.area}</p>
+                <div>
+                  {Object.keys(obb.languages).map((key) => (
+                    <div key={key}>
+                      {key}: {obb.languages[key]}
+                    </div>
+                  ))}
+                </div>
               </div>
             ))}
         </div>
