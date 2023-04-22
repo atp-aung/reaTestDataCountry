@@ -6,6 +6,7 @@ import Filted from "./Filted";
 const App = () => {
   const [filBox, setFilBox] = useState("");
   const [counName, setCounName] = useState([]);
+  //const [dtl, setDtl] = useState(false);
 
   useEffect(() => {
     console.log("effect starts run");
@@ -26,10 +27,18 @@ const App = () => {
     setFilBox(e.target.value);
   };
 
+  const btnShow = (obb) => {
+    const showWork = () => {
+      console.log(obb.name.common);
+      console.log("ghh");
+    };
+    return showWork;
+  };
+
   return (
     <div>
       <Filter handFiltChg={handFiltChg} />
-      <Filted counName={counName} filBox={filBox} />
+      <Filted counName={counName} filBox={filBox} btnShow={btnShow} />
     </div>
   );
 };

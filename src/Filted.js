@@ -1,10 +1,13 @@
+import Nation from "./Nation";
+
 const Filted = (p) => {
   const filted = p.counName
     .filter((ob) => ob.name.common.toLowerCase().includes(p.filBox))
     .map((obb, i) => {
       return (
         <p key={i}>
-          {obb.name.common} <button>show</button>
+          {/* {obb.name.common} <button onClick={btnShow(obb)}>show</button> */}
+          {obb.name.common} <button onClick={p.btnShow(obb)}>show</button>
         </p>
       );
     });
@@ -14,26 +17,7 @@ const Filted = (p) => {
   }
 
   if (filted.length === 1) {
-    return (
-      <div>
-        {p.counName
-          .filter((ob) => ob.name.common.toLowerCase().includes(p.filBox))
-          .map((obb, i) => (
-            <div key={i}>
-              <h2>{obb.name.common}</h2>
-              <p>Capital: {obb.capital}</p>
-              <p>Area: {obb.area}</p>
-              <h3>Languages:</h3>
-              <div>
-                {Object.keys(obb.languages).map((key) => (
-                  <li key={key}>{obb.languages[key]}</li>
-                ))}
-              </div>
-              <img src={obb.flags.svg} alt="test logo" />
-            </div>
-          ))}
-      </div>
-    );
+    return <Nation counName={p.counName} filBox={p.filBox} />;
   }
 
   return <>{filted}</>;
