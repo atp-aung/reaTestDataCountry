@@ -20,7 +20,6 @@ const App = () => {
         })
         .catch((err) => console.log("erro"));
     }
-    //}, []);
   }, [filBox]);
 
   const handFiltChg = (e) => {
