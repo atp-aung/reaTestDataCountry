@@ -6,7 +6,6 @@ const Filted = (p) => {
     .map((obb, i) => {
       return (
         <p key={i}>
-          {/* {obb.name.common} <button onClick={btnShow(obb)}>show</button> */}
           {obb.name.common} <button onClick={p.btnShow(obb)}>show</button>
         </p>
       );
