@@ -26,7 +26,7 @@ const Nation = (p) => {
           .filter((ob) => ob.name.common.toLowerCase().includes(p.filBox))
           .map((obb, i) => (
             <div key={i}>
-              <Weather getCity={obb.capital} />
+              <Weather getCity={obb.capital} getNati={obb.name.common} />
             </div>
           ))}
       </div>

@@ -18,7 +18,7 @@ const App = () => {
         setCounName(response.data);
       })
       .catch((err) => console.log("erro"));
-  }, []);
+  }, [filBox]);
 
   const handFiltChg = (e) => {
     setFilBox(e.target.value);
