@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 import axios from "axios";
 import Filter from "./Filter";
+import Weather from "./Weather";
 //import Filted from "./Filted";
 
 const App = () => {
@@ -22,6 +23,14 @@ const App = () => {
 
   const handFiltChg = (e) => {
     setFilBox(e.target.value);
+  };
+
+  const getCity = () => {
+    counName
+      .filter((ob) => ob.name.common.toLowerCase().includes(filBox))
+      .map((obb, i) => {
+        return obb.name.common;
+      });
   };
 
   // const btnShow = (obb) => {
@@ -49,6 +58,7 @@ const App = () => {
             return <p key={i}>{obb.name.common}</p>;
           })}
       </div>
+      <Weather getCity={getCity} />
       {/* <Filted counName={counName} filBox={filBox} btnShow={btnShow} /> */}
     </div>
   );
