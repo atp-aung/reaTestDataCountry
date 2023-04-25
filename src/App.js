@@ -25,13 +25,18 @@ const App = () => {
     setFilBox(e.target.value);
   };
 
-  const getCity = () => {
-    counName
-      .filter((ob) => ob.name.common.toLowerCase().includes(filBox))
-      .map((obb, i) => {
-        return obb.name.common;
-      });
-  };
+  // const getCity = () => {
+  //   const getCiw = () => {
+  //     // counName
+  //     //   .filter((ob) => ob.name.common.toLowerCase().includes(filBox))
+  //     //   .map((obb, i) => {
+  //     //     return obb?.name?.common;
+  //     //   });
+  //     const cityName = "Tokyo";
+  //     return cityName;
+  //   };
+  //   return getCiw;
+  // };
 
   // const btnShow = (obb) => {
   //   const showWork = () => {
@@ -58,7 +63,13 @@ const App = () => {
             return <p key={i}>{obb.name.common}</p>;
           })}
       </div>
-      <Weather getCity={getCity} />
+      <Weather
+        getCity={() => {
+          const cityName = "Tokyo";
+          return cityName;
+        }}
+      />
+
       {/* <Filted counName={counName} filBox={filBox} btnShow={btnShow} /> */}
     </div>
   );

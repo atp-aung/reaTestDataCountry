@@ -3,8 +3,9 @@ import axios from "axios";
 
 const Weather = (p) => {
   const [wthDtl, setWthDtl] = useState("");
-  const [city, setCity] = useState("Tokyo");
+  const [city, setCity] = useState(p.getCity);
   const apiKey = "c2973aa415fd05d393e5970b324cd774";
+  console.log(p.getCity);
 
   useEffect(() => {
     console.log("effect two");
@@ -23,8 +24,8 @@ const Weather = (p) => {
 
   return (
     <>
-      <div>{wthDtl.cod}</div>
-      <div>{wthDtl.base}</div>
+      <div>cod: {wthDtl.cod}</div>
+      <div>base: {wthDtl.base}</div>
     </>
   );
 };
