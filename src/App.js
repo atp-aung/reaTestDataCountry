@@ -9,7 +9,6 @@ const App = () => {
 
   useEffect(() => {
     console.log("effect starts run");
-
     console.log("fetching nations...");
     axios
       .get(`https://restcountries.com/v3.1/all`)

@@ -9,7 +9,6 @@ const Weather = (p) => {
 
   useEffect(() => {
     console.log("effect two");
-
     console.log("fetching weather");
     axios
       .get(
