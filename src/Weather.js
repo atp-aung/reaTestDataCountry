@@ -25,7 +25,7 @@ const Weather = (p) => {
   return (
     <>
       <div>cod: {wthDtl.cod}</div>
-      <div>base: {wthDtl.base}</div>
+      <div>base: {wthDtl.name}</div>
     </>
   );
 };

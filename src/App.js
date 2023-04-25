@@ -27,11 +27,11 @@ const App = () => {
 
   // const getCity = () => {
   //   const getCiw = () => {
-  //     // counName
-  //     //   .filter((ob) => ob.name.common.toLowerCase().includes(filBox))
-  //     //   .map((obb, i) => {
-  //     //     return obb?.name?.common;
-  //     //   });
+  // counName
+  //   .filter((ob) => ob.name.common.toLowerCase().includes(filBox))
+  //   .map((obb, i) => {
+  //     return obb?.name?.common;
+  //   });
   //     const cityName = "Tokyo";
   //     return cityName;
   //   };
@@ -65,7 +65,7 @@ const App = () => {
       </div>
       <Weather
         getCity={() => {
-          const cityName = "Tokyo";
+          const cityName = "London";
           return cityName;
         }}
       />
