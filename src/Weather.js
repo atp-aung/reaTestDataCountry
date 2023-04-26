@@ -1,10 +1,13 @@
 import { useState, useEffect } from "react";
 import axios from "axios";
+import Iconshow from "./Iconshow";
 
 const Weather = (p) => {
   const [wthDtl, setWthDtl] = useState("");
   const [city, setCity] = useState(p.getCity);
+
   const apiKey = "c2973aa415fd05d393e5970b324cd774";
+
   console.log(p.getCity);
 
   useEffect(() => {
@@ -21,10 +24,21 @@ const Weather = (p) => {
       .catch((err) => console.log("err city"));
   }, [city]);
 
+  const ww = wthDtl.weather;
+  const www = ww || [];
+  const wr = www[0];
+
+  const imgS = (s) => {
+    console.log(s);
+    return `https://openweathermap.org/img/wn/${s}@2x.png`;
+  };
+
   return (
     <>
-      <div>temp: {wthDtl.main?.temp}</div>
-      <div>City: {wthDtl.name}</div>
+      <h3>Weather in {wthDtl.name}</h3>
+      <div>temp: {wthDtl.main?.temp} Celcius</div>
+      <Iconshow imgS={imgS(wr?.icon)} />
+      <div>wind: {wthDtl.wind?.speed} m/s</div>
     </>
   );
 };
